@@ -39,7 +39,7 @@ fs.readFile(__dirname+"/wolkenkratzer.json", function(err, data) {
     //fs.writeFile -> ermöglicht das asynchrone Schreiben von Dateien
     
     //Zu Aufgabe3 -> Liste in einer neuen Datei Speichern -> d.h ich muss den Namen verändern
-    fs.writeFile(__dirname+"/sorted_wolkenkratzer.json",function(err) {
+    fs.writeFile(__dirname+"/sorted_wolkenkratzer.json",JSON.stringify(emulated),function(err) {
 
 			if (err) throw err;
         
