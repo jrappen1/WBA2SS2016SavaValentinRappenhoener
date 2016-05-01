@@ -1,0 +1,13 @@
+function (err) {
+
+			if (err) throw err;
+        
+            //Beispiel einer for-Schleife in JSON -> for(var k in result) {console.log(k, result[k]);}
+            // Farben eingefügt für Name, Stadt und Höhe
+            for(var i in emulated.wolkenkratzer){
+            console.log(chalk.green("Name:" + emulated.wolkenkratzer[i].name));
+            console.log(chalk.red("Stadt:" + emulated.wolkenkratzer[i].stadt));
+            console.log(chalk.yellow("Hoehe:" + emulated.wolkenkratzer[i].hoehe));
+            console.log("--------------------------------------");
+            }
+    }
