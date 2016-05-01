@@ -19,11 +19,27 @@ fs.readFile(__dirname+"/wolkenkratzer.json", function(err, data) {
     
         // die Javascript Funktion JSON.parse(text) wird benutzt um einen JSON text  in ein javascript objekt umzuwandeln
         var emulated = JSON.parse(data.toString());
+    
+    //Aufgabe 3 -> Sortieren nach Höhe macht man Durch eine If-Anweisung (Siehe Beispiellink)
+    emulated.wolkenkratzer.sort(function(a,b) {
+
+				if (a.hoehe > b.hoehe) {
+   					return 1;
+  				}
+  				if (a.hoehe < b.hoehe) {
+    				return -1;
+  				}
+  				// a muss gleich sein mit b 
+  					return 0;
+				}
+			);
 
     //hatte da vorher dirname+ data stehen dadurch hat es einfach die unveränderte json datei ausgegeben
     //damit konnte ich die wolkenkratzer datei verändern 
     //fs.writeFile -> ermöglicht das asynchrone Schreiben von Dateien
-    fs.writeFile(__dirname+"/wolkenkratzer.json",function(err) {
+    
+    //Zu Aufgabe3 -> Liste in einer neuen Datei Speichern -> d.h ich muss den Namen verändern
+    fs.writeFile(__dirname+"/sorted_wolkenkratzer.json",function(err) {
 
 			if (err) throw err;
         
