@@ -4,6 +4,9 @@
 // wofür steht nun "var" -> In JavaScrip deklariert man eine Variable via "var Statement" bevor man es benutzt 
 
 var fs = require('fs');
+//Aufgabe 2 -> Das Einfärben 
+//var chalk = require ('chalk') -> chalk -> damit kann man Buchstarben einfärben -> 1 Schritt -> die Installation npm install --save chalk z.b. kann man mit der Eingabe -> chalk.blue('Hello world!') -> kann man eine Zeichenkette färben
+var chalk = require('chalk');
 
 //Die Funktion -> fs.readFile(__dirname+"/wolkenkratzer.json",function(err,data)) -> ermöglicht das asynchrone Auslesen von Dateien
 // __dirname ->  enthält Name des Verzeichnisses , in dem das aktuelle Programm liegt.
@@ -25,10 +28,11 @@ fs.readFile(__dirname+"/wolkenkratzer.json", function(err, data) {
 			if (err) throw err;
         
             //Beispiel einer for-Schleife in JSON -> for(var k in result) {console.log(k, result[k]);}
+            // Farben eingefügt für Name, Stadt und Höhe
             for(var i in emulated.wolkenkratzer){
-            console.log("Name:" + emulated.wolkenkratzer[i].name);
-            console.log("Stadt:" + emulated.wolkenkratzer[i].stadt);
-            console.log("Hoehe:" + emulated.wolkenkratzer[i].hoehe);
+            console.log(chalk.green("Name:" + emulated.wolkenkratzer[i].name));
+            console.log(chalk.red("Stadt:" + emulated.wolkenkratzer[i].stadt));
+            console.log(chalk.yellow("Hoehe:" + emulated.wolkenkratzer[i].hoehe));
             console.log("--------------------------------------");
             }
     });
