@@ -24,6 +24,10 @@ var subscription = client.subscribe('/articles', function(message) {
 	console.log("Neuer Artikel von " + message.article + ": " + message.content);
 });
 
+app.post("/users",function(req,res){
+	res.json(req.body);
+});
+
 //POST
 app.post('/articles', function(req, res){
 
@@ -53,6 +57,6 @@ app.post('/articles', function(req, res){
 
 });
 
-server.listen(8000, function () {
-	console.log("Server listens on port 8000.");
+server.listen(6000, function () {
+	console.log("Server listens on port 6000.");
 })
