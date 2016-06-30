@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+	font: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	color: #363636;
+	background-color:rgba(255,255,255,0.20);
+	margin:0;
+}
+h1 {
+	font-size:24px;
+	color:rgba(186,11,110,1.00)	
+}
+h2 {
+	line-height:0px;
+	font-size:18px;
+	color:rgba(186,11,110,1.00)	
+}
+header {
+	background-color:rgba(62,62,62,1.00);
+	padding-left:50px;
+}
+hr {
+	border-color:rgba(0,0,0,0.70);	
+	border:solid 1.5px;
+}
+#logo {
+	background-color:rgba(0,0,0,1.00);
+	width:350px;
+	color:rgba(255,255,255,1.00);
+	height:100px;
+	text-align:center;
+	line-height:30px;
+	font-font-size:24px;
+}
+.centerer{
+	width:100%;
+	margin:auto;
+	text-align:center;
+}
+nav {
+	background-color:rgba(100,192,54,1.00);	
+	clear:both;
+	display:block;
+	height:50px;
+	width:830px;	
+	margin:0 auto;
+	padding-left:50px;
+}
+nav a {
+	float:left;	
+	font-size:32px;
+	text-decoration:none;
+	padding:0 10px 0px 10px;
+	color:rgba(0,0,0,1.00);
+}
+nav a:hover {
+	color:rgba(255,255,255,1.00);
+	text-decoration:none;	
+}
+#wraper {
+	margin:50px;
+}
+aside{
+	background-color:rgba(255,255,255,0.80);
+	display:block;
+	float:left;
+	padding:20px;
+	font-size:24px;
+}
+main{
+	
+}
+.autor{
+	font-weight:bold;	
+}
+.img_sim {
+	background-color:rgba(0,0,0,1.00);
+	height:100px;
+	width:240px;
+}
+article {
+	padding-bottom:20px;
+}
+#new_offers {
+	background-color:rgba(255,255,255,0.80);
+	border-right:solid 10px rgba(164,158,159,1.00);
+}
+#offers {
+	background-color:rgba(255,255,255,0.80);
+}
+#new_requests {
+	background-color:rgba(255,255,255,0.80);
+	
+}
