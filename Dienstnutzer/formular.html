@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Chatio - Registrieren</title>
+      <link rel="stylesheet" href="login.css" />
+      <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="login-box">
+      <p><h1>Registrieren</h1></p>
+      <form action="" method="POST" onsubmit="return registrieren()">
+        <input type="text" name="nick" placeholder="Deon Nickname" /><br />
+        <input type="text" name="name" placeholder="Dein Name" /><br />
+        <input type="password" name="password" placeholder="Passwort" /><br />
+        <button type="submit" onclick="">Registrieren</button><br />
+        <button type="button" id="users" onclick="window.location.href='/users'">User Anzeigen</button>
+      </form>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+  function pruefen(f) {
+      var fehler = "";
+      if (f.elements["nick"].value == "")
+        fehler = "nick nicht angegeben";
+      if (f.elements["name"].value == "")
+        fehler = "name nicht angegeben";
+      if (f.elements["password"].value == "")
+        fehler = "password nicht angegeben";
+
+      if ( fehler != ""){
+        alert(fehler);
+        return false;
+      }
+      registrieren();
+      return false;
+
+    }
+
+    function registrieren(){
+      debugger;
+      console.log("Soll hier etwas machen");
+        var f = document.forms[0];
+        var xhr = XMLHttpRequest();
+
+        xhr.open("POST","/users",false);
+        xhr.setRequestHeader("Contet-type","application/json");
+
+        xhr.send(
+         JSON.parse("{'nick':'"+f.elements["nick"].value+"','name':'"+f.elements["name"].value+"','password':'"+f.elements["password"]+"''}")
+        );
+        console.log(xhr.respnseText);
+        return false;
+    }
+
+  </script>
+
+</html>
