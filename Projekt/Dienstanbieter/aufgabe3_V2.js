@@ -15,7 +15,7 @@ app.post('/users', function (req, res) {
         newUser.id = rep;
         newUser.merkzettel = [];
         newUser.bewertung = [];
-        newUser.articles = [];
+        newUser.article = [];
         client.set('user:' + newUser.id, JSON.stringify(newUser), function (err, rep) {
             res.json(newUser);
         });
