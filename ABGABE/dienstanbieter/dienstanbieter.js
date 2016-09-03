@@ -114,7 +114,7 @@ app.post('/articles', function (req, res) {
 // einen erfragen
 app.get('/articles/:id', function (req, res) {
 
-    client.get('article:' + req.params.id, function (err, rep) {
+    client.get('articles:' + req.params.id, function (err, rep) {
 
         if (rep) {
             res.type('json').send(rep);
@@ -417,4 +417,6 @@ app.get('/merkzettel/:userID', function (req, res) {
     });
 });
 
-app.listen(3000);
+app.listen(3000, function () {
+    console.log('Dienstanbieter läuft über Port 3000')
+});

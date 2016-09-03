@@ -140,6 +140,25 @@ article {
 #profil_field section{
 	
 }
+#button{
+	background-color:rgba(0,0,0,0.2);
+	border:solid 1px rgba(0,0,0,0.6);
+	font: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	color:rgba(186,11,110,1.00);
+	font-weight: bold;
+}
+
+
+#articlepicture{
+	background-color:rgba(255,255,255,0.80);
+	border:solid 1px rgba(0,0,0,0.6);
+	font: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	color:rgba(186,11,110,1.00);
+}
+
+#login {
+	background-color:rgba(255,255,255,0.80);
+}
 
 #offers {
 	background-color:rgba(255,255,255,0.80);
