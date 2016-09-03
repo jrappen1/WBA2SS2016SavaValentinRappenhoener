@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lena, Alisa, Jacky WBA</title>
+
+
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<header>
+    <div id="logo">Logo</div>
+</header>
+<div class="centerer">
+    <nav>
+        <a href="index.html"> Home </a><a class="lines">|</a>
+        <a href="angebote.html">Angebote</a><a class="lines">|</a>
+        <a href="gesuche.html">Gesuche</a><a class="lines">|</a>
+        <a href="index.html">Suche</a><a class="lines">|</a>
+        <a href="login.html">Logout</a>
+
+        <a href="profil2.html" class="pink">Profil</a>
+    </nav>
+</div>
+<div id="wraper">
+    <aside class="col-md-2 col-lg-3">
+
+        <center><h1>Eintrags Optionen</h1></center>
+        <hr/>
+        <center>
+            <form>
+
+                <label for="keyword">Schlagwort -
+                    <input type="text" id="keyword" size="15" maxlength="15" required></label>
+                <br>
+
+                <label for="kind">Art -
+                    <select id="category">
+                        <option value="auto" selected></option>
+                        <option value="electric">Elektronik</option>
+                        <option value="kitchen">Küche</option>
+                        <option value="bath">Bad</option>
+                        <option value="electric">Nachhilfe</option>
+                        <option value="kitchen">Haushalt</option>
+                        <option value="bath">Arbeitsmaterial</option>
+                    </select>
+                </label>
+                <br>
+
+                <label for="option">Option -
+                    <select>
+                        <option value="create" selected>erstellen</option>
+                        <option value="change">bearbeiten</option>
+                    </select>
+                </label>
+            </form>
+        </center>
+
+
+    </aside>
+
+    <aside class="col-md-2 col-lg-offset-1 col-lg-8">
+
+        <center><h1>Artikel erstellen/bearbeiten</h1></center>
+        <hr/>
+        <center>
+            <!--form method="POST" enctype="multipart/form-data"-->
+
+                <!--label>Bilddatei <br>
+                    <input name="Datei" id="articlepicture" type="file" size="15" accept="image/*"> </label>
+                <br>
+                <br-->
+
+                <label for="articlename">Name -
+                    <input type="text" id="articlename" size="15" maxlength="30" required></label>
+
+
+                <!--label for="kind">Status -
+                    <select id="">
+                        <option value="auto" selected></option>
+                        <option value="available">verfügbar</option>
+                        <option value="lend">verliehen</option>
+                        <option value="notavailable">nicht verfügbar</option>
+                    </select>
+                </label-->
+                <br>
+
+                <label for="description">Beschreibung<br>
+                    <textarea id="description" class="description" rows="4" name="description"></textarea>
+                </label>
+                <br>
+                <input type="submit" onClick="publishArticle()" value="speichern" id="button">
+
+            <!--/form-->
+        </center>
+
+    </aside>
+</div>
+<script type="text/javascript" src="http://localhost:8000/faye/client.js"></script>
+<script>
+
+    var client = new Faye.Client("http://localhost:8000/faye");
+
+    function publishArticle() {
+
+        console.log("huhu ich tue was");
+
+        var publication = client.publish('/articles', {
+            "Beschreibung": document.getElementById('description').value,
+            "Artikelnamen": document.getElementById('articlename').value,
+            "userID":"13"
+        });
+
+        publication.then(
+                function () {
+                    console.log("nachricht wurde versendet.");
+                },
+
+                function (error) {
+                    console.log("nachricht wurde nicht versendet");
+                    next(error);
+                }
+        );
+        return false;
+    }
+
+</script>
+
+
+</body>
+</html>

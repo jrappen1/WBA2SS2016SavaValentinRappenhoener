@@ -1,5 +1,0 @@
-articles:
-{
-    "category":"",
-    "article":""
-}

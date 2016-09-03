@@ -1,0 +1,22 @@
+{
+  "name": "abgabe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "WBA2SS2016SavaValentinRappenhoener"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "faye": "^1.2.2",
+    "redis": "^2.6.2"
+  }
+}
