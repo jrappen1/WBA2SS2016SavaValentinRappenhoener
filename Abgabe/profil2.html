@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lena, Alisa, Jacky WBA</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <header>
+        <div id="logo">Logo</div>
+    </header>
+    <div class="centerer">
+        <nav>
+            <a href="index.html"> Home </a><a class="lines">|</a>
+            <a href="angebote.html">Angebote</a><a class="lines">|</a>
+            <a href="gesuche.html">Gesuche</a><a class="lines">|</a>
+            <a href="index.html">Suche</a><a class="lines">|</a> 
+            <a href="login.html">Logout</a>
+			
+		 <a href="profil2.html" class="pink">Profil</a>
+         </nav>
+    </div>
+    <div id="wraper">
+	<aside class="col-md-2">
+    <center>
+      <h1>Persönliches</h1>
+    </center>
+          <hr />
+		  <img src="http://2at.ch/wp-content/uploads/2016/05/Platzhalterbild-e1426365133464-380x380.jpg" width="200" height="200">
+		<br>
+		Name
+		<br>
+		Geburtsdatum
+		<br>
+		Wohnort
+		<br>
+		Studienort
+		<br>
+		Studiengang
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="artikel-einstellen.html">
+         <input type="submit" value="Artikelverwaltung" id="button">
+         </form>
+    </aside>
+    
+    <main class="col-md-10">
+    	<section id="profil_field" class="col-md-6">
+			<section>
+				<center><h1>Angebote</h1></center>
+				<hr />
+        	<article class="col-md-6">
+                <div class="img_sim">
+                </div>
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+            </article>
+            
+            <article class="col-md-6">
+                <div class="img_sim">
+                </div>
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+            </article>
+            <article class="col-md-6">
+                <div class="img_sim">
+                </div>
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+            </article>
+            
+            <article class="col-md-6">
+                <div class="img_sim">
+                </div>
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+            </article>
+			</section>
+			
+			<section>
+				<center><h1>Gesuche</h1></center>
+				<hr />
+            
+			<article class="col-md-6">
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+                afklhakj fhakjshfasldjadjalfhakjsfhas lfkaskdasidjalifjalisfsdkj fhakjdgfaldk asdknjafkljhas flkjasdladkj afkashfjlioasfoija dojiasdlikjasdilajfo iasfhl
+            </article>
+            <article class="col-md-6">
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+                afklhakj fhakjshfasldjadjalfhakjsfhas lfkaskdasidjalifjalisfsdkj fhakjdgfaldk asdknjafkljhas flkjasdladkj afkashfjlioasfoija dojiasdlikjasdilajfo iasfhl
+            </article>
+            <article class="col-md-6">
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+                afklhakj fhakjshfasldjadjalfhakjsfhas lfkaskdasidjalifjalisfsdkj fhakjdgfaldk asdknjafkljhas flkjasdladkj afkashfjlioasfoija dojiasdlikjasdilajfo iasfhl
+            </article>
+            <article class="col-md-6">
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+                afklhakj fhakjshfasldjadjalfhakjsfhas lfkaskdasidjalifjalisfsdkj fhakjdgfaldk asdknjafkljhas flkjasdladkj afkashfjlioasfoija dojiasdlikjasdilajfo iasfhl
+            </article>
+			</section>
+            
+        </section>
+        
+        <section id="new_requests" class="col-md-6">
+        
+            <center><h1>Bewertungen</h1></center>
+          <hr />
+            
+            <div id="berwertung"></div>
+            
+            <article class="col-md-6">
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+                afklhakj fhakjshfasldjadjalfhakjsfhas lfkaskdasidjalifjalisfsdkj fhakjdgfaldk asdknjafkljhas flkjasdladkj afkashfjlioasfoija dojiasdlikjasdilajfo iasfhl
+            </article>
+            <article class="col-md-6">
+                <h2>
+                    Artikel xxxx
+                </h2>
+                <p class="autor">von User XXXX</p>
+                afklhakj fhakjshfasldjadjalfhakjsfhas lfkaskdasidjalifjalisfsdkj fhakjdgfaldk asdknjafkljhas flkjasdladkj afkashfjlioasfoija dojiasdlikjasdilajfo iasfhl
+            </article>
+            
+          
+			<textarea id="bwText" class="comment" rows="4" name="comment" value="Comment"></textarea><br><br>
+			<input type="submit" onclick="publishMsg()" value="Submit" id="button">
+            
+            <script type="text/javascript" src="http://localhost:8000/faye/client.js"></script>
+    
+    <script>
+        var client = new Faye.Client('http://localhost:8000/faye');
+        
+        var subscription = client.subscribe('/bewertung', function(message) {
+            
+        var div = document.getElementById('berwertung');
+        div.innerHTML +=
+            '<article class="col-md-6"><h2>'+
+                    'von ...' +
+                '</h2>'+
+                '<p class="autor">von User ' + JSON.stringify(message.userID).replace(/\"/g,'') + '</p>'+
+                JSON.stringify(message.bewertung).replace(/\"/g,'') +
+            '</article>';
+        }); 
+    </script>
+            
+    <script type="text/javascript" src="http://localhost:8000/faye/client.js"></script>
+
+<script>
+    
+    var client = new Faye.Client("http://localhost:8000/faye");
+    
+    function publishMsg(){
+       
+        var publication = client.publish('/bewertung',{
+         "bewertung": document.getElementById('bwText').value,
+         "userID": "13"
+        });
+    
+    publication.then(
+        
+        function(){
+        console.log("nachricht wurde versendet.");
+    },
+                     
+        function(error){
+        console.log("nachricht wurde nicht versendet");
+        next(error);
+    }
+    
+    );
+    
+    };
+    
+</script>
+            
+    <script type="text/javascript">
+        window.onload = function(){
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET","http://localhost:8000/bewertung",true);
+        xhr.getResponseHeader = function(){
+            if(xhr.readyState != 4)
+                return;
+            var bewertungen = xhr.responseText;
+            var div = document.getElementById("bewertung");
+            div.innerHTML = bewertung;
+        }
+        xhr.send();
+        }
+    </script>
+         
+        </section>
+    </main>
+
+</div>
+<br>
+<footer>
+<a href="index.html"> Hilfe </a><a class="lines">|</a>
+            <a href="angebote.html">Impressum</a><a class="lines">|</a>
+            <a href="gesuche.html">Kontakt</a>
+</footer>
+</body>
+</html>

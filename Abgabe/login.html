@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lena, Alisa, Jacky WBA</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <header>
+        <div id="logo">Logo</div>
+    </header>
+    <div class="centerer">
+        <nav>
+            <a href="index.html"> Home </a><a class="lines">|</a>
+            <a href="angebote.html">Angebote</a><a class="lines">|</a>
+            <a href="gesuche.html">Gesuche</a><a class="lines">|</a>
+            <a href="index.html">Suche</a><a class="lines">|</a> 
+            <a href="login.html">Login</a>
+         </nav>
+    </div>
+    <div id="wraper">
+	<aside class="col-md-2 col-lg-3">
+    
+    <center><h1>Login</h1></center>
+     <hr />
+     <center> <form>
+     
+       <label for="bname">Benutzername - 
+    <input type="text" id="logbname" size="15" maxlength="30" required></label> 
+    <br>
+ 
+    <label for="passwd">Passwort -  
+    <input type="password" id="logpasswd" size="15" maxlength="40" required></label> 
+      <br>
+      
+       <input type="submit" value="Login" id="button">
+      
+    </form> </center>
+     
+     
+    </aside>
+    
+	<aside class="col-md-2 col-lg-offset-1 col-lg-8"> 
+    
+    <center> <h1>Registration</h1></center>
+      <hr />
+        <center>
+     <!--form-->
+<table>
+    <tr>
+        <td><label for="bname">Benutzername - </label></td>
+        <td><input type="text" id="bname" size="15" maxlength="30" required> </td>
+    </tr>
+    <tr>
+        <td><label>Email-Adresse - </label></td>
+        <td><input id="email" name="email" size="15"></td>
+    </tr>
+    <tr>
+        <td><label for="passwd">Passwort - </label></td>
+        <td><input type="password" id="passwd" size="15" maxlength="40" required></td>
+    </tr>
+    <tr>
+        <td><label for="name">Name - </label></td>
+        <td><input type="text" id="name" name="name" size="15" required></td>
+    </tr>
+    <tr>
+        <td><label for="gebdat">Geburtsdatum - </label></td>
+        <td><input type="date" id="gebdat"></td>
+    </tr>
+    <tr>
+        <td><label for="town">Wohnort - </label></td>
+        <td><input id="town" name="town" size="15"></td>
+    </tr>
+    <tr>
+        <td><label for="studyplace">Studienort - </label></td>
+        <td><input id="studyplace" name="studyplace" size="15"></td>
+    </tr>
+    <tr>
+        <td><label for="studysubject">Studiengang - </label></td>
+        <td><input id="studysubject" name="studysubject" size="15"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" onClick ="publishUser()" value="Registrieren" id="button"></td>
+    </tr>
+</table>
+       
+      
+    <!--/form-->
+        </center>
+
+    
+      </aside>
+</div>
+
+    <script type="text/javascript" src="http://localhost:8000/faye/client.js"></script>
+<script>
+    var client = new Faye.Client("http://localhost:8000/faye");
+    function publishUser() {
+        console.log("huhu ich tue was");
+        var userdata = {
+            "nickname": document.getElementById('bname').value,
+            "name": document.getElementById('name').value,
+            "passwort": document.getElementById('passwd').value,
+            "e-mail" : document.getElementById('email').value,
+            "geburtsdatum": document.getElementById('gebdat').value,
+            "wohnort" : document.getElementById('town').value,
+            "studienort" : document.getElementById('studyplace').value,
+            "studiengang" : document.getElementById('studysubject').value 
+        };
+        
+        console.log(userdata);
+        var publication = client.publish('/users', userdata);
+        publication.then(
+                function () {
+                    console.log("nachricht wurde versendet.");
+                },
+                function (error) {
+                    console.log("nachricht wurde nicht versendet");
+                    next(error);
+                }
+        );
+        return false;
+    }
+</script>
+
+</body>
+</html>
